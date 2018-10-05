@@ -1,0 +1,9 @@
+<script>
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', '{% url "post-list" %}', false);
+
+    xhr.send();
+
+    alert(xhr.responseText);
+</script>
