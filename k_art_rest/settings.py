@@ -33,7 +33,7 @@ CLOUDINARY = {
 }
 
 cloudinary.config(
-    cloud_name='lemeshkob',
+    cloud_name='siplem',
     api_key='194173849147347',
     api_secret='TMLydwLkBDFF1UvLUlbFOCw3eYE'
 )
