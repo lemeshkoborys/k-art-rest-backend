@@ -26,9 +26,46 @@ class Post(models.Model):
         verbose_name='Заголовок'
     )
 
+    content = models.TextField(
+        null=False,
+        blank=False,
+        verbose_name='Текст новости'
+    )
+
+    created = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name=' Создано'
+    )
+
     image = CloudinaryField()
 
 
 @receiver(pre_delete, sender=Post)
 def photo_delete(sender, instance, **kwargs):
     destroy(instance.image.public_id)
+
+
+class Comment(models.Model):
+
+    class Meta:
+        db_table = 'comments'
+        verbose_name = 'комментарий'
+        verbose_name_plural = 'комментарии'
+
+    author = models.CharField(
+        max_length=120,
+        null=False,
+        blank=False,
+        verbose_name='Автор комментария'
+    )
+
+    email = models.EmailField(
+        null=False,
+        blank=False,
+        verbose_name='Почта автора'
+    )
+
+    created = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Создан'
+    )
