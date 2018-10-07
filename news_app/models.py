@@ -39,6 +39,9 @@ class Post(models.Model):
 
     image = CloudinaryField()
 
+    def __str__(self):
+        return self.title
+
 
 @receiver(pre_delete, sender=Post)
 def photo_delete(sender, instance, **kwargs):
@@ -81,3 +84,6 @@ class Comment(models.Model):
         blank=False,
         verbose_name='Текст новости'
     )
+
+    def __str__(self):
+        return 'Title: ' + self.post.title + '; Author: ' + self.author + '; Created at: ' + str(self.created)
