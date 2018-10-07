@@ -1,0 +1,18 @@
+[
+  {
+    "id":1,
+    "title":"Мы открылись!!!",
+    "image":"image/upload/v1538842163/k-art-site-news-photos/unjjr5x9hd3drewqw60y.png",
+    "content":"Hello it's me!",
+    "comments":
+    [
+      {
+        "id":1,
+        "author":"Borys Lemeshko",
+        "email":"lemeshkob@gmail.com",
+        "post":"Мы открылись!!!",
+        "content":"There is no spoon",
+      }
+    ],
+  }
+]

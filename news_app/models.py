@@ -52,6 +52,12 @@ class Comment(models.Model):
         verbose_name = 'комментарий'
         verbose_name_plural = 'комментарии'
 
+    post = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name='comments'
+    )
+
     author = models.CharField(
         max_length=120,
         null=False,
@@ -68,4 +74,10 @@ class Comment(models.Model):
     created = models.DateTimeField(
         auto_now_add=True,
         verbose_name='Создан'
+    )
+
+    content = models.TextField(
+        null=False,
+        blank=False,
+        verbose_name='Текст новости'
     )
