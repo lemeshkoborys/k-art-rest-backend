@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- НЕ ЗАБЫТЬ УДАЛИТЬ!!! -->
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+  <title>K-art новости</title>
+  <link rel="shortcut icon" href="../static/images/logo_big.jpg" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../static/css/my-index.css">
+  <link rel="stylesheet" href="../static/css/header.css">
+  <link rel="stylesheet" href="../static/css/menu.css">
+  <link rel="stylesheet" href="../static/css/menu-sm.css">
+  <link rel="stylesheet" href="../static/css/news.css">
+  <link rel="stylesheet" href="../static/css/footer.css">
+</head>
+<body>
+  
+<!-- HEADER - WITH FACEBOOK, INSTAGRAM, ABOUT COMPANY AND CONTACTS -->
+<!-- ------------------------------------------------------------- -->
+  <header>
+    <div id="social">
+      <a href="https://www.facebook.com/yulianna.kart/" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/kart.adv.production/" target="_blank">Instagram</a>
+    </div>
+
+    <div class="header-logo">
+      <a href="./index.html">K&ndash;art</a>
+    </div>
+
+    <div id="about">
+      <a href="./news.html">Новости</a>
+      <a href="./feedback.html">Контакты</a>
+    </div>
+  </header>
+
+<!-- NAVIGATION WITH EXPANDABLE TABS AND ANIMATION ON HOVER -->
+<!-- ------------------------------------------------------ -->
+  <nav>
+    <div class="menu-item">
+      <div class="menu-item-title-div mid">
+        <div>
+          <p class="menu-item-title">Цифровая и офсетная полиграфия</p>
+        </div>
+      </div>
+      <div class="menu-item-text expandable">
+        <p onclick="openScrollToItem('tab00', 'item00')">буклеты</p>
+        <p onclick="openScrollToItem('tab00', 'item01')">каталоги</p>
+        <p onclick="openScrollToItem('tab00', 'item02')">фирменные папки</p>
+        <p onclick="openScrollToItem('tab00', 'item03')">альбомы с дизайнерскими обложками</p>
+        <p onclick="openScrollToItem('tab00', 'item04')">визитки</p>
+        <p onclick="openScrollToItem('tab00', 'item05')">открытки</p>
+        <p onclick="openScrollToItem('tab00', 'item06')">пригласительные</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-title-div mid">
+        <div>
+          <p class="menu-item-title">Широкоформатная и УФ печать</p>
+        </div>
+      </div>
+      <div class="menu-item-text expandable">
+        <p onclick="openScrollToItem('tab01', 'item10')">самоклеющая пленка</p>
+        <p onclick="openScrollToItem('tab01', 'item11')">баннер, баннерная сетка</p>
+        <p onclick="openScrollToItem('tab01', 'item12')">бумага Blueback, Backlit</p>
+        <p onclick="openScrollToItem('tab01', 'item13')">холст</p>
+        <p onclick="openScrollToItem('tab01', 'item14')">плоскопечатная УФ печать на материалах:</p>
+        <p onclick="openScrollToItem('tab01', 'item15')">печать на дизайнерских обоях</p>
+        <p onclick="openScrollToItem('tab01', 'item16')">постпечатные услуги, порезка, фрезеровка</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-title-div mid">
+        <div>
+          <p class="menu-item-title">Наружная реклама</p>
+        </div>
+      </div>
+      <div class="menu-item-text expandable">
+        <p onclick="openScrollToItem('tab02', 'item20')">вывески, лайтбокс, фреймлайт</p>
+        <p onclick="openScrollToItem('tab02', 'item21')">объемные фасадные конструкции с подсветкой</p>
+        <p onclick="openScrollToItem('tab02', 'item22')">конструктивы с широкоформатной рекламой на фасадах</p>
+        <p onclick="openScrollToItem('tab02', 'item23')">оклейка витрин самоклеющей пленкой</p>
+        <p onclick="openScrollToItem('tab02', 'item24')">оклейка авто самоклеющей пленкой</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-title-div mid">
+        <div>
+          <p class="menu-item-title">Интерьерное оформление помещений</p>
+        </div>
+      </div>
+      <div class="menu-item-text expandable">
+        <p onclick="openScrollToItem('tab03', 'item30')">брендинг</p>
+        <p onclick="openScrollToItem('tab03', 'item31')">оформление входной группы</p>
+        <p onclick="openScrollToItem('tab03', 'item32')">оформление навигационной системы</p>
+        <p onclick="openScrollToItem('tab03', 'item33')">дизайнерские обои с различными фактурами</p>
+        <p onclick="openScrollToItem('tab03', 'item34')">стеклянный, акриловый фартук для кухни</p>
+        <p onclick="openScrollToItem('tab03', 'item35')">светильники с led подсветкой</p>
+        <p onclick="openScrollToItem('tab03', 'item36')">оформление стеклянных перегородок</p>
+        <p onclick="openScrollToItem('tab03', 'item37')">оформление корпоративных мероприятий</p>
+      </div>
+    </div>
+  </nav>
+
+<!-- NAVIGATION FOR SMALL DEVICES WITH EXPANDABLE TABS AND ANIMATION ON HOVER -->
+<!-- ------------------------------------------------------------------------ -->
+  <div class="menu-sm">
+    <div class="menu-sm-header" onclick="toggleMenu()">
+      <img class="menu-sm-arrow" src="../static/images/arrow_white.png" alt="">
+      <h4>Наши услуги</h4>
+    </div>
+    <div class="menu-sm-body expandable-sm">
+      <div class="menu-sm-item mid">
+        <div>
+          <p class="menu-sm-item-title" onclick="expandChild(0)">Цифровая и офсетная полиграфия</p>
+          <div class="menu-sm-item-text expandable-sm">
+            <p onclick="openScrollToItem('tab00', 'item00')">буклеты</p>
+            <p onclick="openScrollToItem('tab00', 'item01')">каталоги</p>
+            <p onclick="openScrollToItem('tab00', 'item02')">фирменные папки</p>
+            <p onclick="openScrollToItem('tab00', 'item03')">альбомы с дизайнерскими обложками</p>
+            <p onclick="openScrollToItem('tab00', 'item04')">визитки</p>
+            <p onclick="openScrollToItem('tab00', 'item05')">открытки</p>
+            <p onclick="openScrollToItem('tab00', 'item06')">пригласительные</p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-sm-item mid">
+        <div>
+          <p class="menu-sm-item-title" onclick="expandChild(1)">Широкоформатная и УФ печать</p>
+          <div class="menu-sm-item-text expandable-sm">
+            <p onclick="openScrollToItem('tab01', 'item10')">самоклеющая пленка</p>
+            <p onclick="openScrollToItem('tab01', 'item11')">баннер, баннерная сетка</p>
+            <p onclick="openScrollToItem('tab01', 'item12')">бумага Blueback, Backlit</p>
+            <p onclick="openScrollToItem('tab01', 'item13')">холст</p>
+            <p onclick="openScrollToItem('tab01', 'item14')">плоскопечатная УФ печать на материалах:</p>
+            <p onclick="openScrollToItem('tab01', 'item15')">печать на дизайнерских обоях</p>
+            <p onclick="openScrollToItem('tab01', 'item16')">постпечатные услуги, порезка, фрезеровка</p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-sm-item mid">
+        <div>
+          <p class="menu-sm-item-title" onclick="expandChild(2)">Наружная реклама</p>
+          <div class="menu-sm-item-text expandable-sm">
+            <p onclick="openScrollToItem('tab02', 'item20')">вывески, лайтбокс, фреймлайт</p>
+            <p onclick="openScrollToItem('tab02', 'item21')">объемные фасадные конструкции с подсветкой</p>
+            <p onclick="openScrollToItem('tab02', 'item22')">конструктивы с широкоформатной рекламой на фасадах</p>
+            <p onclick="openScrollToItem('tab02', 'item23')">оклейка витрин самоклеющей пленкой</p>
+            <p onclick="openScrollToItem('tab02', 'item24')">оклейка авто самоклеющей пленкой</p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-sm-item mid">
+        <div>
+          <p class="menu-sm-item-title" onclick="expandChild(3)">Интерьерное оформление помещений</p>
+          <div class="menu-sm-item-text expandable-sm">
+            <p onclick="openScrollToItem('tab03', 'item30')">брендинг</p>
+            <p onclick="openScrollToItem('tab03', 'item31')">оформление входной группы</p>
+            <p onclick="openScrollToItem('tab03', 'item32')">оформление навигационной системы</p>
+            <p onclick="openScrollToItem('tab03', 'item33')">дизайнерские обои с различными фактурами</p>
+            <p onclick="openScrollToItem('tab03', 'item34')">стеклянный, акриловый фартук для кухни</p>
+            <p onclick="openScrollToItem('tab03', 'item35')">светильники с led подсветкой</p>
+            <p onclick="openScrollToItem('tab03', 'item36')">оформление стеклянных перегородок</p>
+            <p onclick="openScrollToItem('tab03', 'item37')">оформление корпоративных мероприятий</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- NEWSFEED - PAGE WITH NEWS FEED -->
+<!-- ------------------------------ -->
+  <div class="news">
+    <div class="article">
+      <div class="article-image" style="background-image: url(../static/images/folder.jpg);"></div>
+      <h2 class="article-heading">Минимализм в интерьере и в жизни</h2>
+      <p class="article-text">Девиз интерьера в стиле минимализм – «Лучше меньше, да лучше». Сегодня минимализм характеризуется почти полным отказом от декора.</p>
+      <a href="article.html" class="article-link">ЧИТАТЬ ДАЛЕЕ</a>
+    </div>
+    <div class="article">
+      <div class="article-image" style="background-image: url(../static/images/brochure.jpg);"></div>
+      <h2 class="article-heading">Чарльз Рени Макинтош и его стиль</h2>
+      <p class="article-text">Макинтош - один из немногих архитекторов, не боявшихся экспериментировать с цветом. И здесь ему нет равных.</p>
+      <a href="article.html" class="article-link">ЧИТАТЬ ДАЛЕЕ</a>
+    </div>
+    <div class="article">
+      <div class="article-image" style="background-image: url(../static/images/catalogue.jpg);"></div>
+      <h2 class="article-heading">Филипп Старк - изобретатель новых форм</h2>
+      <p class="article-text">
+        Несмотря на катастрофическую занятость и массу ждущих реализации проектов, 
+        у него всегда в запасе несколько новых идей и на вопрос журналистов "Как Вы?", 
+        он без колебания отвечает - "Я совершенен, как всегда..."
+      </p>
+      <a href="article.html" class="article-link">ЧИТАТЬ ДАЛЕЕ</a>
+    </div>
+  </div>
+
+<!-- FOOTER WITH ADDRESS AND SOCIAL MEDIA LINKS -->
+<!-- ------------------------------------------ -->
+  <footer>
+    <div class="footer-row">
+      <div class="footer-col mid">
+        <div id="address">
+          <p>Киев, Украина</p>
+          <p>yulianka.kart@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-col mid">
+        <div id="footer-social">
+          <a href="https://www.facebook.com/yulianna.kart/" target="_blank" style="background-image: url(../static/images/fb_logo.png)"></a>
+          <a href="https://www.instagram.com/kart.adv.production/" target="_blank" style="background-image: url(../static/images/ig_logo.png)"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legalinfo">
+      <div>
+        <p>© 2018 K-art</p>
+      </div>
+      <div>
+        <p>ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../static/js/app.js"></script>
+</body>
+</html>

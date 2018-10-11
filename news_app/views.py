@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import generics, permissions, status
+from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.reverse import reverse
@@ -8,7 +8,6 @@ from .models import Post, Comment
 from .serializers import PostSerializer, CommentSerializer
 from django.conf import settings
 import requests
-from rest_framework_recaptcha.validators import ReCaptchaValidator
 
 
 @api_view(['GET'])
@@ -38,9 +37,6 @@ class CommentList(generics.ListAPIView):
 
 class CommentCreate(APIView):
 
-    # queryset = Comment.objects.all()
-    # serializer_class = CommentSerializer
-
     def post(self, request, pk, format=None):
         post = Post.objects.get(pk=pk)
         serializer = CommentSerializer(data=request.data)
@@ -60,6 +56,9 @@ class CommentCreate(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
 def post_list_view(request):
     return render(request, 'posts/posts.html')
+
+
+def post_detail_view(request):
+    return render(request, 'article_from_json.html')
