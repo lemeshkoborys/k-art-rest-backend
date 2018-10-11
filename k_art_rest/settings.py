@@ -26,16 +26,19 @@ SECRET_KEY = 'qnaxt7g=z-emp=2e+yd2+97!%&=f&_2#6h=&#&9^z^h%&+hf8k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 CLOUDINARY = {
     'max_length': 200,
 }
 
 cloudinary.config(
-    cloud_name='siplem',
-    api_key='194173849147347',
-    api_secret='TMLydwLkBDFF1UvLUlbFOCw3eYE'
+    cloud_name='syplemstudio',
+    api_key='437575465514382',
+    api_secret='r7ZuYYnoqO8YnO5n-2GbrCXxuLU'
 )
 # Application definition
 
@@ -47,9 +50,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary',
+    'recaptcha',
     'news_app',
-    'rest_framework'
+    'rest_framework',
 ]
+
+DRF_RECAPTCHA_SECRET_KEY = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"
+DRF_RECAPTCHA_URL = "https://www.google.com/recaptcha/api/siteverify"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

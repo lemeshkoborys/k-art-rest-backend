@@ -1,13 +1,18 @@
-<script>
-    var xhr = new XMLHttpRequest();
+<html>
+  <head>
+    <title>reCAPTCHA demo: Simple page</title>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <form action="{% url 'comment-create' 4%}" method="POST">
+        {%csrf_token%}
+        <input type="text" name="author">
+        <input type="email" name="email">
+        <input type="text" name="content">
+      <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+      <br/>
+      <input onclick="f()" type="submit" value="Submit">
+    </form>
 
-    xhr.open('GET', '{% url "post-list" %}', false);
-
-    xhr.send();
-
-    var data = xhr.responseText;
-
-    var post_array = data;
-
-    alert(post_array);
-</script>
+  </body>
+</html>
