@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import news_app.urls
+import news_app.urls, feedback_app.urls
+from index_app.views import index_render, render_404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(news_app.urls))
+    path('', index_render, name='home'),
+    path('news/', include(news_app.urls)),
+    path('feedback/', include(feedback_app.urls), name='feedback'),
+    path('404/', render_404, name='404')
 ]

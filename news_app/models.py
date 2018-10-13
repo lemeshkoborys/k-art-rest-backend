@@ -26,6 +26,12 @@ class Post(models.Model):
         verbose_name='Заголовок'
     )
 
+    short_content = models.CharField(
+        max_length=255,
+        null=False,
+        blank=False
+    )
+
     content = models.TextField(
         null=False,
         blank=False,

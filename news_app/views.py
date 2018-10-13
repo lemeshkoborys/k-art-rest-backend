@@ -1,26 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, reverse
+from django.http import HttpResponseRedirect
 from rest_framework import generics, status
 from rest_framework.views import APIView
-from rest_framework.decorators import api_view
-from rest_framework.reverse import reverse
 from rest_framework.response import Response
+from rest_framework.renderers import TemplateHTMLRenderer
 from .models import Post, Comment
-from .serializers import PostSerializer, CommentSerializer
+from .serializers import PostSerializer, CommentSerializer, PostListSerializer
 from django.conf import settings
 import requests
-
-
-@api_view(['GET'])
-def api_root(request, format=None):
-    return Response({
-        'posts': reverse('post-list', request=request, format=format)
-    })
 
 
 class PostList(generics.ListAPIView):
 
     queryset = Post.objects.all()
-    serializer_class = PostSerializer
+    serializer_class = PostListSerializer
+
+    renderer_classes = (TemplateHTMLRenderer, )
+
+    def get(self, request, *args, **kwargs):
+        posts = self.get_queryset()
+        return Response({'posts': posts}, template_name='news/news.html')
 
 
 class PostDetail(generics.RetrieveAPIView):
@@ -28,11 +27,16 @@ class PostDetail(generics.RetrieveAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
+    renderer_classes = (TemplateHTMLRenderer, )
 
-class CommentList(generics.ListAPIView):
-
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
+    def get(self, request, *args, **kwargs):
+        post = self.get_object()
+        comments = Comment.objects.all().filter(post=post)
+        context = {
+            'post': post,
+            'comments': comments
+        }
+        return Response(context, template_name='news/article.html')
 
 
 class CommentCreate(APIView):
@@ -52,7 +56,7 @@ class CommentCreate(APIView):
             if result['success']:
                 serializer.validated_data['post'] = post
                 serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
+                return HttpResponseRedirect(reverse('post-detail', args=[post.id]))
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

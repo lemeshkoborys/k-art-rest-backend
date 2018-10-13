@@ -29,7 +29,10 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'static'),
+)
+
 
 CLOUDINARY = {
     'max_length': 200,
@@ -50,12 +53,22 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary',
+    'index_app',
     'news_app',
     'rest_framework',
+    'phonenumber_field',
+    'feedback_app',
 ]
 
-DRF_RECAPTCHA_SECRET_KEY = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"
+DRF_RECAPTCHA_SECRET_KEY = "6LfIzW4UAAAAAHsXNVuq82YczgkduRE5zMXitvGN"
 DRF_RECAPTCHA_URL = "https://www.google.com/recaptcha/api/siteverify"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'lemeshkob@gmail.com'
+EMAIL_HOST_PASSWORD = 'Boris1998'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

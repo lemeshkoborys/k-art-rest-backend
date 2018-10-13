@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -7,14 +8,14 @@
   <!-- НЕ ЗАБЫТЬ УДАЛИТЬ!!! -->
   <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
   <title>K-art</title>
-  <link rel="shortcut icon" href="../static/images/logo_big.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="../static/css/my-index.css">
-  <link rel="stylesheet" href="../static/css/header.css">
-  <link rel="stylesheet" href="../static/css/story.css">
-  <link rel="stylesheet" href="../static/css/menu.css">
-  <link rel="stylesheet" href="../static/css/menu-sm.css">
-  <link rel="stylesheet" href="../static/css/content.css">
-  <link rel="stylesheet" href="../static/css/footer.css">
+  <link rel="shortcut icon" href="{% static 'images/logo_big.jpg' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/my-index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/story.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu-sm.css' %}">
+  <link rel="stylesheet" href="{% static 'css/content.css'%}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 </head>
 <body>
 
@@ -27,12 +28,12 @@
     </div>
 
     <div class="header-logo">
-      <a href="./index.html">K&ndash;art</a>
+      <a href="{% url 'home' %}">K&ndash;art</a>
     </div>
 
     <div id="about">
-      <a href="news.html">Новости</a>
-      <a href="./feedback.html">Контакты</a>
+      <a href="{% url 'post-list' %}">Новости</a>
+      <a href="{% url 'feedback' %}">Контакты</a>
     </div>
   </header>
 
@@ -108,7 +109,7 @@
 <!-- ------------------------------------------------------------------------ -->
   <div class="menu-sm">
     <div class="menu-sm-header" onclick="toggleMenu()">
-      <img class="menu-sm-arrow" src="../static/images/arrow_white.png" alt="">
+      <img class="menu-sm-arrow" src="{% static 'images/arrow_white.png' %}" alt="">
       <h4>Наши услуги</h4>
     </div>
     <div class="menu-sm-body expandable-sm">
@@ -175,7 +176,7 @@
   <section class="story">
     <article class="story-item">
       <div class="story-item-content">
-        <div class="story-item-image" style="background-image: url(../static/images/logo_big.jpg); background-size: 50%; background-repeat: no-repeat; background-color: #949599;">
+        <div class="story-item-image" style="background-image: url({% static 'images/logo_big.jpga' %}); background-size: 50%; background-repeat: no-repeat; background-color: #949599;">
           
         </div>
         <div class="story-item-info mid">
@@ -215,7 +216,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/brochure.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/brochure.jpg' %});">
                                       
         </div>
       </div>
@@ -223,7 +224,7 @@
     <!-- 1 -->
     <article id="item01" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -249,7 +250,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/folder.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
           
         </div>
       </div>
@@ -257,7 +258,7 @@
     <!-- 3 -->
     <article id="item03" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -283,7 +284,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/folder.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
           
         </div>
       </div>
@@ -291,7 +292,7 @@
     <!-- 5 -->
     <article id="item05" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -317,7 +318,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/folder.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
           
         </div>
       </div>
@@ -339,7 +340,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/brochure.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/brochure.jpg' %});">
                                       
         </div>
       </div>
@@ -347,7 +348,7 @@
     <!-- 1 -->
     <article id="item11" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -373,7 +374,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/folder.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
           
         </div>
       </div>
@@ -381,7 +382,7 @@
     <!-- 3 -->
     <article id="item13" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -407,7 +408,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/folder.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
           
         </div>
       </div>
@@ -415,7 +416,7 @@
     <!-- 5 -->
     <article id="item15" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -441,7 +442,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/folder.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
           
         </div>
       </div>
@@ -463,7 +464,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/brochure.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/brochure.jpg' %});">
                                       
         </div>
       </div>
@@ -471,7 +472,7 @@
     <!-- 1 -->
     <article id="item21" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -497,7 +498,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/folder.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
           
         </div>
       </div>
@@ -505,7 +506,7 @@
     <!-- 3 -->
     <article id="item23" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -531,7 +532,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/folder.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
           
         </div>
       </div>
@@ -553,7 +554,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/brochure.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/brochure.jpg' %});">
                                       
         </div>
       </div>
@@ -561,7 +562,7 @@
     <!-- 1 -->
     <article id="item31" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -587,7 +588,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/folder.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
           
         </div>
       </div>
@@ -595,7 +596,7 @@
     <!-- 3 -->
     <article id="item33" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -621,7 +622,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/folder.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
           
         </div>
       </div>
@@ -629,7 +630,7 @@
     <!-- 5 -->
     <article id="item35" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -655,7 +656,7 @@
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url(../static/images/folder.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
           
         </div>
       </div>
@@ -663,7 +664,7 @@
     <!-- 7 -->
     <article id="item37" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url(../static/images/catalogue.jpg);">
+        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
           
         </div>
         <div class="item-info mid">
@@ -691,8 +692,8 @@
       </div>
       <div class="footer-col mid">
         <div id="footer-social">
-          <a href="https://www.facebook.com/yulianna.kart/" target="_blank" style="background-image: url(../static/images/fb_logo.png)"></a>
-          <a href="https://www.instagram.com/kart.adv.production/" target="_blank" style="background-image: url(../static/images/ig_logo.png)"></a>
+          <a href="https://www.facebook.com/yulianna.kart/" target="_blank" style="background-image: url({% static 'images/fb_logo.png' %})"></a>
+          <a href="https://www.instagram.com/kart.adv.production/" target="_blank" style="background-image: url({% static 'images/ig_logo.png' %})"></a>
         </div>
       </div>
     </div>

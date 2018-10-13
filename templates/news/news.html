@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
   <meta charset="utf-8" />
@@ -6,14 +7,14 @@
   <!-- НЕ ЗАБЫТЬ УДАЛИТЬ!!! -->
   <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
   <title>K-art новости</title>
-  <link rel="shortcut icon" href="../static/images/logo_big.jpg" type="image/x-icon">
+  <link rel="shortcut icon" href="{% static 'images/logo_big.jpg' %}" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../static/css/my-index.css">
-  <link rel="stylesheet" href="../static/css/header.css">
-  <link rel="stylesheet" href="../static/css/menu.css">
-  <link rel="stylesheet" href="../static/css/menu-sm.css">
-  <link rel="stylesheet" href="../static/css/news.css">
-  <link rel="stylesheet" href="../static/css/footer.css">
+  <link rel="stylesheet" href="{% static 'css/my-index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu-sm.css' %}">
+  <link rel="stylesheet" href="{% static 'css/news.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 </head>
 <body>
   
@@ -26,12 +27,12 @@
     </div>
 
     <div class="header-logo">
-      <a href="./index.html">K&ndash;art</a>
+      <a href="{% url 'home' %}">K&ndash;art</a>
     </div>
 
     <div id="about">
-      <a href="./news.html">Новости</a>
-      <a href="./feedback.html">Контакты</a>
+      <a href="{% url 'post-list' %}">Новости</a>
+      <a href="{% url 'feedback' %}">Контакты</a>
     </div>
   </header>
 
@@ -107,7 +108,7 @@
 <!-- ------------------------------------------------------------------------ -->
   <div class="menu-sm">
     <div class="menu-sm-header" onclick="toggleMenu()">
-      <img class="menu-sm-arrow" src="../static/images/arrow_white.png" alt="">
+      <img class="menu-sm-arrow" src="{% static 'images/arrow_white.png' %}" alt="">
       <h4>Наши услуги</h4>
     </div>
     <div class="menu-sm-body expandable-sm">
@@ -172,28 +173,14 @@
 <!-- NEWSFEED - PAGE WITH NEWS FEED -->
 <!-- ------------------------------ -->
   <div class="news">
+      {% for post in posts %}
     <div class="article">
-      <div class="article-image" style="background-image: url(../static/images/folder.jpg);"></div>
-      <h2 class="article-heading">Минимализм в интерьере и в жизни</h2>
-      <p class="article-text">Девиз интерьера в стиле минимализм – «Лучше меньше, да лучше». Сегодня минимализм характеризуется почти полным отказом от декора.</p>
-      <a href="article.html" class="article-link">ЧИТАТЬ ДАЛЕЕ</a>
+      <div class="article-image" style="background-image: url(https://res.cloudinary.com/syplemstudio/{{ post.image }});"></div>
+      <h2 class="article-heading">{{ post.title }}</h2>
+      <p class="article-text">{{ post.short_content }}</p>
+      <a href="{% url 'post-detail' post.id%}" class="article-link">ЧИТАТЬ ДАЛЕЕ</a>
     </div>
-    <div class="article">
-      <div class="article-image" style="background-image: url(../static/images/brochure.jpg);"></div>
-      <h2 class="article-heading">Чарльз Рени Макинтош и его стиль</h2>
-      <p class="article-text">Макинтош - один из немногих архитекторов, не боявшихся экспериментировать с цветом. И здесь ему нет равных.</p>
-      <a href="article.html" class="article-link">ЧИТАТЬ ДАЛЕЕ</a>
-    </div>
-    <div class="article">
-      <div class="article-image" style="background-image: url(../static/images/catalogue.jpg);"></div>
-      <h2 class="article-heading">Филипп Старк - изобретатель новых форм</h2>
-      <p class="article-text">
-        Несмотря на катастрофическую занятость и массу ждущих реализации проектов, 
-        у него всегда в запасе несколько новых идей и на вопрос журналистов "Как Вы?", 
-        он без колебания отвечает - "Я совершенен, как всегда..."
-      </p>
-      <a href="article.html" class="article-link">ЧИТАТЬ ДАЛЕЕ</a>
-    </div>
+      {% endfor %}
   </div>
 
 <!-- FOOTER WITH ADDRESS AND SOCIAL MEDIA LINKS -->
@@ -208,8 +195,8 @@
       </div>
       <div class="footer-col mid">
         <div id="footer-social">
-          <a href="https://www.facebook.com/yulianna.kart/" target="_blank" style="background-image: url(../static/images/fb_logo.png)"></a>
-          <a href="https://www.instagram.com/kart.adv.production/" target="_blank" style="background-image: url(../static/images/ig_logo.png)"></a>
+          <a href="https://www.facebook.com/yulianna.kart/" target="_blank" style="background-image: url({% static 'images/fb_logo.png' %})"></a>
+          <a href="https://www.instagram.com/kart.adv.production/" target="_blank" style="background-image: url({% static 'images/ig_logo.png' %})"></a>
         </div>
       </div>
     </div>
@@ -222,6 +209,6 @@
       </div>
     </div>
   </footer>
-  <script src="../static/js/app.js"></script>
+  <script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>
