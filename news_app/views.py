@@ -4,6 +4,7 @@ from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.renderers import TemplateHTMLRenderer
+from rest_framework.pagination import PageNumberPagination
 from .models import Post, Comment
 from .serializers import PostSerializer, CommentSerializer, PostListSerializer
 from django.conf import settings
@@ -17,9 +18,19 @@ class PostList(generics.ListAPIView):
 
     renderer_classes = (TemplateHTMLRenderer, )
 
+    pagination_class = PageNumberPagination()
+
     def get(self, request, *args, **kwargs):
         posts = self.get_queryset()
-        return Response({'posts': posts}, template_name='news/news.html')
+        result = self.pagination_class.paginate_queryset(posts, request)
+        html_context = self.pagination_class.get_html_context()
+        context = {
+            'posts': result,
+            'next': html_context['next_url'],
+            'previous': html_context['previous_url'],
+            'page_links': html_context['page_links']
+            }
+        return Response(context, template_name='news/news.html')
 
 
 class PostDetail(generics.RetrieveAPIView):

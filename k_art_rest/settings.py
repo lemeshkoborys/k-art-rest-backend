@@ -38,6 +38,11 @@ CLOUDINARY = {
     'max_length': 200,
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 2
+}
+
 cloudinary.config(
     cloud_name='syplemstudio',
     api_key='437575465514382',

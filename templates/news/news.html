@@ -183,6 +183,14 @@
       {% endfor %}
   </div>
 
+  <div class="navigation">
+      <a href="{{ previous }}">Previous</a>
+      {% for link in page_links %}
+
+          <a href="{{ link.url }}">{{ link.url }}</a>
+      {% endfor %}
+      <a href="{{ next }}">Next</a>
+  </div>
 <!-- FOOTER WITH ADDRESS AND SOCIAL MEDIA LINKS -->
 <!-- ------------------------------------------ -->
   <footer>
