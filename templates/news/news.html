@@ -185,9 +185,8 @@
 
   <div class="navigation">
       <a href="{{ previous }}">Previous</a>
-      {% for link in page_links %}
-
-          <a href="{{ link.url }}">{{ link.url }}</a>
+      {% for number, link in navigation.items %}
+          <a href="{{ link }}">{{ number }}</a>
       {% endfor %}
       <a href="{{ next }}">Next</a>
   </div>
@@ -218,5 +217,7 @@
     </div>
   </footer>
   <script src="{% static 'js/app.js' %}"></script>
+<script>
+</script>
 </body>
 </html>

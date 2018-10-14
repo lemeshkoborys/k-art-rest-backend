@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, get_list_or_404
 from django.http import HttpResponseRedirect
 from rest_framework import generics, status
 from rest_framework.views import APIView
@@ -24,11 +24,16 @@ class PostList(generics.ListAPIView):
         posts = self.get_queryset()
         result = self.pagination_class.paginate_queryset(posts, request)
         html_context = self.pagination_class.get_html_context()
+        nav_dict = {}
+        count = 1
+        for link in html_context['page_links']:
+            nav_dict[count] = link.url
+            count += 1
         context = {
             'posts': result,
             'next': html_context['next_url'],
             'previous': html_context['previous_url'],
-            'page_links': html_context['page_links']
+            'navigation': nav_dict
             }
         return Response(context, template_name='news/news.html')
 
