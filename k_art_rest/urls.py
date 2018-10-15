@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 import news_app.urls, feedback_app.urls
 from index_app.views import index_render, render_404
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,3 +26,7 @@ urlpatterns = [
     path('feedback/', include(feedback_app.urls), name='feedback'),
     path('404/', render_404, name='404')
 ]
+
+urlpatterns += patterns('',
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    )
