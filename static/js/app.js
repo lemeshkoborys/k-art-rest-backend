@@ -53,5 +53,5 @@ function openScrollToItem(tab, item) {
   localStorage.setItem('redirected', true);
   localStorage.setItem('tab', tab);
   localStorage.setItem('item', item);
-  location.href='index.html';
+  location.href='/';
 }
