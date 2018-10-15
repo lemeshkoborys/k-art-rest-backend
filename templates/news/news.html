@@ -183,12 +183,26 @@
       {% endfor %}
   </div>
 
-  <div class="navigation">
-      <a href="{{ previous }}">Previous</a>
-      {% for number, link in navigation.items %}
-          <a href="{{ link }}">{{ number }}</a>
-      {% endfor %}
+  <div class="pagination">
+    {% if previous %}
+        <a href="{{ previous }}">Previous</a>
+    {% else %}
+        <p>Previous</p>
+    {% endif %}
+
+    {% for link in navigation %}
+        {% if link.url != request.build_absolute_uri %}
+            <a href="{{ link.url }}">{{ link.number }}</a>
+        {% else %}
+            <p>{{ link.number}}</p>
+        {% endif %}
+    {% endfor %}
+
+    {% if next %}
       <a href="{{ next }}">Next</a>
+    {% else %}
+      <p>Next</p>
+    {% endif %}
   </div>
 <!-- FOOTER WITH ADDRESS AND SOCIAL MEDIA LINKS -->
 <!-- ------------------------------------------ -->

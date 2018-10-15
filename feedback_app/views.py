@@ -40,7 +40,7 @@ def send_email_to_admin(email, content):
 class FeedbackCreate(APIView):
 
     def post(self, request, format=None):
-        category = get_object_or_404(FeedbackCategory, pk = request.data['category'])
+        category = FeedbackCategory.objects.get(pk=request.data['category'])
         serializer = FeedbackSerializer(data=request.data)
         if serializer.is_valid():
             recaptcha_response = request.data['g-recaptcha-response']
@@ -52,7 +52,10 @@ class FeedbackCreate(APIView):
             result = r.json()
 
             if result['success']:
-                serializer.validated_data['category'] = category
+                if category:
+                    serializer.validated_data['category'] = category
+                else:
+                    serializer.validated_data['category'] = 'None'
                 email = serializer.validated_data['email']
                 content = serializer.validated_data['content']
                 send_email_to_admin(email, content)

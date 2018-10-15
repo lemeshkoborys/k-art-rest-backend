@@ -24,16 +24,13 @@ class PostList(generics.ListAPIView):
         posts = self.get_queryset()
         result = self.pagination_class.paginate_queryset(posts, request)
         html_context = self.pagination_class.get_html_context()
-        nav_dict = {}
-        count = 1
-        for link in html_context['page_links']:
-            nav_dict[count] = link.url
-            count += 1
+        links = html_context['page_links']
+        print(links)
         context = {
             'posts': result,
             'next': html_context['next_url'],
             'previous': html_context['previous_url'],
-            'navigation': nav_dict
+            'navigation': links
             }
         return Response(context, template_name='news/news.html')
 
