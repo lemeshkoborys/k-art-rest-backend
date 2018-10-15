@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "London";
+  src: url("../fonts/london.fcc6449a6e33.ttf");
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  /* -webkit-font-smoothing: antialiased; */
+  font-size: 14px;
+  font-weight: 330;
+}
+.mid {
+  display: table;
+}
+.mid * {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
