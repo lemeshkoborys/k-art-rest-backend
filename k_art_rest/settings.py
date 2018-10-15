@@ -21,18 +21,22 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'qnaxt7g=z-emp=2e+yd2+97!%&=f&_2#6h=&#&9^z^h%&+hf8k'
-
+# SECRET_KEY = 'qnaxt7g=z-emp=2e+yd2+97!%&=f&_2#6h=&#&9^z^h%&+hf8k'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'qnaxt7g=z-emp=2e+yd2+97!%&=f&_2#6h=&#&9^z^h%&+hf8k')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-  os.path.join(BASE_DIR, 'static'),
-)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 CLOUDINARY = {
     'max_length': 200,
@@ -40,7 +44,7 @@ CLOUDINARY = {
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 1
+    'PAGE_SIZE': 2
 }
 
 cloudinary.config(
@@ -77,6 +81,7 @@ EMAIL_HOST_PASSWORD = 'Boris1998'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
