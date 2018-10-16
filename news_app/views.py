@@ -13,7 +13,7 @@ import requests
 
 class PostList(generics.ListAPIView):
 
-    queryset = Post.objects.all().order_by('created')
+    queryset = Post.objects.all().order_by('-created')
     serializer_class = PostListSerializer
 
     renderer_classes = (TemplateHTMLRenderer, )
