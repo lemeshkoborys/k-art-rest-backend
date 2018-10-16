@@ -13,7 +13,7 @@ import requests
 
 class PostList(generics.ListAPIView):
 
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('created')
     serializer_class = PostListSerializer
 
     renderer_classes = (TemplateHTMLRenderer, )
@@ -45,7 +45,7 @@ class PostDetail(generics.RetrieveAPIView):
     def get(self, request, *args, **kwargs):
         post = self.get_object()
         article_text = post.content.split('\r\n')
-        comments = Comment.objects.all().filter(post=post)
+        comments = Comment.objects.all().filter(post=post).order_by('created')
         context = {
             'post': post,
             'article_text': article_text,
