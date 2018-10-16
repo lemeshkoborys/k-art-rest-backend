@@ -1,6 +1,15 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post
 
 
-admin.site.register(Post)
-admin.site.register(Comment)
+class PostModelAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'title',
+        'short_content',
+        'created'
+    )
+
+
+admin.site.register(Post, PostModelAdmin)
+
