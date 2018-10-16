@@ -30,7 +30,8 @@ class PostList(generics.ListAPIView):
             'posts': result,
             'next': html_context['next_url'],
             'previous': html_context['previous_url'],
-            'navigation': links
+            'navigation': links,
+            'nav_size': len(links)
             }
         return Response(context, template_name='news/news.html')
 
