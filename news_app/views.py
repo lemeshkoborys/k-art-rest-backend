@@ -76,9 +76,3 @@ class CommentCreate(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-def post_list_view(request):
-    return render(request, 'posts/posts.html')
-
-
-def post_detail_view(request):
-    return render(request, 'article_from_json.html')
