@@ -18,6 +18,9 @@ from django.urls import path, include
 import news_app.urls, feedback_app.urls
 from index_app.views import index_render, render_404
 
+handler404 = 'index_app.views.render_404'
+handler500 = 'index_app.views.render_500'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_render, name='home'),

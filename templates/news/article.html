@@ -7,15 +7,15 @@
   <!-- НЕ ЗАБЫТЬ УДАЛИТЬ!!! -->
   <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
   <title>K-art - {{ post.title }}</title>
-  <link rel="shortcut icon" href="../../static/images/logo_big.jpg" type="image/x-icon">
+  <link rel="shortcut icon" href="{% static 'logo_big.jpg' %}" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../../static/css/my-index.css">
-  <link rel="stylesheet" href="../../static/css/header.css">
-  <link rel="stylesheet" href="../../static/css/menu.css">
-  <link rel="stylesheet" href="../../static/css/menu-sm.css">
-  <link rel="stylesheet" href="../../static/css/article.css">
-  <link rel="stylesheet" href="../../static/css/comments.css">
-  <link rel="stylesheet" href="../../static/css/footer.css">
+  <link rel="stylesheet" href="{% static 'my-index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu-sm.css' %}">
+  <link rel="stylesheet" href="{% static 'css/article.css' %}">
+  <link rel="stylesheet" href="{% static 'css/comments.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
   <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
@@ -181,16 +181,24 @@
     <div class="article-text">
       <h2>{{ post.title }}</h2>
       <p class="article-timestamp">{{ post.created }}</p>
-      <p>
-        {{ post.content }}
-      </p>
+      {% for item in article_text %}
+          <p>{{ item }}</p>
+      {% endfor %}
     </div>
   </div>
 
 <!-- COMMENTS - A DIV WITH COMMENTS -->
 <!-- ------------------------------ -->
   <div class="comments">
-    <h4>3 комментария</h4>
+  {% if comments %}
+        {% if comments_count == 1 %}
+            <h4>1 комментарий</h4>
+        {% else %}
+            <h4>{{ comments_count }} комментария</h4>
+        {% endif %}
+  {% else %}
+      <h4>Здесь пока нету комментариев. Возможно вы хотите быть первым, кто его оставит?</h4>
+  {% endif %}
 
     <section>
         {% for comment in comments %}
@@ -239,8 +247,8 @@
       </div>
       <div class="footer-col mid">
         <div id="footer-social">
-          <a href="https://www.facebook.com/yulianna.kart/" target="_blank" style="background-image: url(../../static/images/fb_logo.png)"></a>
-          <a href="https://www.instagram.com/kart.adv.production/" target="_blank" style="background-image: url(../../static/images/ig_logo.png)"></a>
+          <a href="https://www.facebook.com/yulianna.kart/" target="_blank" style="background-image: url({% static 'images/fb_logo.png' %})"></a>
+          <a href="https://www.instagram.com/kart.adv.production/" target="_blank" style="background-image: url({% static 'images/ig_logo.png' %})"></a>
         </div>
       </div>
     </div>
@@ -253,6 +261,6 @@
       </div>
     </div>
   </footer>
-  <script src="../../static/js/app.js"></script>
+  <script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>

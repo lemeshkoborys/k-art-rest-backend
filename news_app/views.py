@@ -44,10 +44,13 @@ class PostDetail(generics.RetrieveAPIView):
 
     def get(self, request, *args, **kwargs):
         post = self.get_object()
+        article_text = post.content.split('\r\n')
         comments = Comment.objects.all().filter(post=post)
         context = {
             'post': post,
-            'comments': comments
+            'article_text': article_text,
+            'comments': comments,
+            'comments_count': len(comments)
         }
         return Response(context, template_name='news/article.html')
 
