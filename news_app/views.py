@@ -25,7 +25,6 @@ class PostList(generics.ListAPIView):
         result = self.pagination_class.paginate_queryset(posts, request)
         html_context = self.pagination_class.get_html_context()
         links = html_context['page_links']
-        print(links)
         context = {
             'posts': result,
             'next': html_context['next_url'],

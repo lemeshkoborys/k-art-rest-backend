@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="{% static 'css/menu-sm.css' %}">
   <link rel="stylesheet" href="{% static 'css/content.css'%}">
   <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
 </head>
 <body>
 
@@ -173,32 +174,32 @@
 
 <!-- DIV WITH STORY ABOUT COMPANY -->
 <!-- ------------------------------------ -->
-  <section class="story">
+ <section class="story">
     <article class="story-item">
       <div class="story-item-content">
         <div class="story-item-image" style="background-image: url({% static 'images/logo_big.jpg' %}); background-size: 50%; background-repeat: no-repeat; background-color: #949599;">
-          
+
         </div>
         <div class="story-item-info mid">
           <div>
             <h2 class="story-item-info-title">Our Story</h2>
             <p class="story-item-info-description">
-                Еще вчера, а это чуть больше 10 лет назад ;),  мы знали все о широкоформатной полиграфии...  
-                баннерные ткани, самоклейка, бумага... но сегодня мы уже команда единомышленников, которая  
-                предлагает Вам, дорогие друзья, цифровую печать еще и на дизайнерских обоях и на 
-                различных жестких материалах с прямой печатью ДСП, ПВХ, акрил, композит, зеркала и стекла...  
-                Это могут быть как ваше личное фото, так и имиджи, которые для Вас будут ассоциировать 
-                самые положительные и приятные воспоминания ) Но и на этом мы не остановились ;)  далее  
-                это уже  декорирование нежилых помещений,  офисов, кафе, ресторанов и всего что Вам 
-                захочется!  ну и как же без объемных световых конструкций для уличного и внутреннего применения ;) 
-                Ждем Вас на чашечку ароматного кофе у нас в офисе или готовы приехать к Вам на встречу!  
+                Еще вчера, а это чуть больше 10 лет назад ;),  мы знали все о широкоформатной полиграфии...
+                баннерные ткани, самоклейка, бумага... но сегодня мы уже команда единомышленников, которая
+                предлагает Вам, дорогие друзья, цифровую печать еще и на дизайнерских обоях и на
+                различных жестких материалах с прямой печатью ДСП, ПВХ, акрил, композит, зеркала и стекла...
+                Это могут быть как ваше личное фото, так и имиджи, которые для Вас будут ассоциировать
+                самые положительные и приятные воспоминания ) Но и на этом мы не остановились ;)  далее
+                это уже  декорирование нежилых помещений,  офисов, кафе, ресторанов и всего что Вам
+                захочется!  ну и как же без объемных световых конструкций для уличного и внутреннего применения ;)
+                Ждем Вас на чашечку ароматного кофе у нас в офисе или готовы приехать к Вам на встречу!
             </p>
           </div>
         </div>
       </div>
     </article>
   </section>
-  
+
 <!-- DIV WITH CONTENT THAT SHOULD BE TABS -->
 <!-- ------------------------------------ -->
   <!-- TAB 0: 7 -->
@@ -210,29 +211,41 @@
           <div>
             <h2 class="item-info-title">Буклеты</h2>
             <p class="item-info-description">
-              Многочисленные исследования по маркетингу показали, 
-              что рекламный буклет – в лидерах по популярности, 
+              Многочисленные исследования по маркетингу показали,
+              что рекламный буклет – в лидерах по популярности,
               а главное эффективности среди рекламных инструментов.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/brochure.jpg' %});">
-                                      
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 1 -->
     <article id="item01" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
             <h2 class="item-info-title">Каталоги</h2>
             <p class="item-info-description">
-              Каталог можно считать идеальным решением для компаний, 
-              ассортимент товаров и услуг которых постоянно пополняется. 
+              Каталог можно считать идеальным решением для компаний,
+              ассортимент товаров и услуг которых постоянно пополняется.
             </p>
           </div>
         </div>
@@ -245,28 +258,40 @@
           <div>
             <h2 class="item-info-title">Фирменные папки</h2>
             <p class="item-info-description">
-              Печать папок с корпоративной символикой, например, логотипом – 
+              Печать папок с корпоративной символикой, например, логотипом –
               это создание и постоянное поддерживание имиджа компании на рынке услуг.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 3 -->
     <article id="item03" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
             <h2 class="item-info-title">Альбомы с дизайнерскими обложками</h2>
             <p class="item-info-description">
-              Каталог можно считать идеальным решением для компаний, 
-              ассортимент товаров и услуг которых постоянно пополняется. 
+              Каталог можно считать идеальным решением для компаний,
+              ассортимент товаров и услуг которых постоянно пополняется.
             </p>
           </div>
         </div>
@@ -279,28 +304,40 @@
           <div>
             <h2 class="item-info-title">Визитки</h2>
             <p class="item-info-description">
-              Печать папок с корпоративной символикой, например, логотипом – 
+              Печать папок с корпоративной символикой, например, логотипом –
               это создание и постоянное поддерживание имиджа компании на рынке услуг.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 5 -->
     <article id="item05" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
             <h2 class="item-info-title">Открытки</h2>
             <p class="item-info-description">
-              Каталог можно считать идеальным решением для компаний, 
-              ассортимент товаров и услуг которых постоянно пополняется. 
+              Каталог можно считать идеальным решением для компаний,
+              ассортимент товаров и услуг которых постоянно пополняется.
             </p>
           </div>
         </div>
@@ -313,13 +350,19 @@
           <div>
             <h2 class="item-info-title">Пригласительные</h2>
             <p class="item-info-description">
-              Печать папок с корпоративной символикой, например, логотипом – 
+              Печать папок с корпоративной символикой, например, логотипом –
               это создание и постоянное поддерживание имиджа компании на рынке услуг.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
@@ -334,29 +377,41 @@
           <div>
             <h2 class="item-info-title">Самоклеющая пленка</h2>
             <p class="item-info-description">
-              Многочисленные исследования по маркетингу показали, 
-              что рекламный буклет – в лидерах по популярности, 
+              Многочисленные исследования по маркетингу показали,
+              что рекламный буклет – в лидерах по популярности,
               а главное эффективности среди рекламных инструментов.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/brochure.jpg' %});">
-                                      
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 1 -->
     <article id="item11" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
             <h2 class="item-info-title">Баннер, баннерная сетка</h2>
             <p class="item-info-description">
-              Каталог можно считать идеальным решением для компаний, 
-              ассортимент товаров и услуг которых постоянно пополняется. 
+              Каталог можно считать идеальным решением для компаний,
+              ассортимент товаров и услуг которых постоянно пополняется.
             </p>
           </div>
         </div>
@@ -369,28 +424,40 @@
           <div>
             <h2 class="item-info-title">Бумага Blueback, Backlit</h2>
             <p class="item-info-description">
-              Печать папок с корпоративной символикой, например, логотипом – 
+              Печать папок с корпоративной символикой, например, логотипом –
               это создание и постоянное поддерживание имиджа компании на рынке услуг.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 3 -->
     <article id="item13" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
             <h2 class="item-info-title">Холст</h2>
             <p class="item-info-description">
-              Каталог можно считать идеальным решением для компаний, 
-              ассортимент товаров и услуг которых постоянно пополняется. 
+              Каталог можно считать идеальным решением для компаний,
+              ассортимент товаров и услуг которых постоянно пополняется.
             </p>
           </div>
         </div>
@@ -403,28 +470,40 @@
           <div>
             <h2 class="item-info-title">Плоскопечатная УФ печать на материалах</h2>
             <p class="item-info-description">
-              Печать папок с корпоративной символикой, например, логотипом – 
+              Печать папок с корпоративной символикой, например, логотипом –
               это создание и постоянное поддерживание имиджа компании на рынке услуг.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 5 -->
     <article id="item15" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
             <h2 class="item-info-title">Печать на дизайнерских обоях</h2>
             <p class="item-info-description">
-              Каталог можно считать идеальным решением для компаний, 
-              ассортимент товаров и услуг которых постоянно пополняется. 
+              Каталог можно считать идеальным решением для компаний,
+              ассортимент товаров и услуг которых постоянно пополняется.
             </p>
           </div>
         </div>
@@ -437,13 +516,19 @@
           <div>
             <h2 class="item-info-title">Постпечатные услуги, порезка, фрезеровка</h2>
             <p class="item-info-description">
-              Печать папок с корпоративной символикой, например, логотипом – 
+              Печать папок с корпоративной символикой, например, логотипом –
               это создание и постоянное поддерживание имиджа компании на рынке услуг.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
@@ -458,29 +543,41 @@
           <div>
             <h2 class="item-info-title">Вывески, лайтбокс, фреймлайт</h2>
             <p class="item-info-description">
-              Многочисленные исследования по маркетингу показали, 
-              что рекламный буклет – в лидерах по популярности, 
+              Многочисленные исследования по маркетингу показали,
+              что рекламный буклет – в лидерах по популярности,
               а главное эффективности среди рекламных инструментов.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/brochure.jpg' %});">
-                                      
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 1 -->
     <article id="item21" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
             <h2 class="item-info-title">Объемные фасадные конструкции с подсветкой</h2>
             <p class="item-info-description">
-              Каталог можно считать идеальным решением для компаний, 
-              ассортимент товаров и услуг которых постоянно пополняется. 
+              Каталог можно считать идеальным решением для компаний,
+              ассортимент товаров и услуг которых постоянно пополняется.
             </p>
           </div>
         </div>
@@ -493,28 +590,40 @@
           <div>
             <h2 class="item-info-title">Конструктивы с широкоформатной рекламой на фасадах</h2>
             <p class="item-info-description">
-              Печать папок с корпоративной символикой, например, логотипом – 
+              Печать папок с корпоративной символикой, например, логотипом –
               это создание и постоянное поддерживание имиджа компании на рынке услуг.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 3 -->
     <article id="item23" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
             <h2 class="item-info-title">Оклейка витрин самоклеющей пленкой</h2>
             <p class="item-info-description">
-              Каталог можно считать идеальным решением для компаний, 
-              ассортимент товаров и услуг которых постоянно пополняется. 
+              Каталог можно считать идеальным решением для компаний,
+              ассортимент товаров и услуг которых постоянно пополняется.
             </p>
           </div>
         </div>
@@ -527,13 +636,19 @@
           <div>
             <h2 class="item-info-title">Оклейка авто самоклеющей пленкой</h2>
             <p class="item-info-description">
-              Печать папок с корпоративной символикой, например, логотипом – 
+              Печать папок с корпоративной символикой, например, логотипом –
               это создание и постоянное поддерживание имиджа компании на рынке услуг.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
@@ -548,29 +663,41 @@
           <div>
             <h2 class="item-info-title">Брендинг</h2>
             <p class="item-info-description">
-              Многочисленные исследования по маркетингу показали, 
-              что рекламный буклет – в лидерах по популярности, 
+              Многочисленные исследования по маркетингу показали,
+              что рекламный буклет – в лидерах по популярности,
               а главное эффективности среди рекламных инструментов.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/brochure.jpg' %});">
-                                      
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 1 -->
     <article id="item31" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
             <h2 class="item-info-title">Оформление входной группы</h2>
             <p class="item-info-description">
-              Каталог можно считать идеальным решением для компаний, 
-              ассортимент товаров и услуг которых постоянно пополняется. 
+              Каталог можно считать идеальным решением для компаний,
+              ассортимент товаров и услуг которых постоянно пополняется.
             </p>
           </div>
         </div>
@@ -583,28 +710,40 @@
           <div>
             <h2 class="item-info-title">Оформление навигационной системы</h2>
             <p class="item-info-description">
-              Печать папок с корпоративной символикой, например, логотипом – 
+              Печать папок с корпоративной символикой, например, логотипом –
               это создание и постоянное поддерживание имиджа компании на рынке услуг.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 3 -->
     <article id="item33" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
             <h2 class="item-info-title">Дизайнерские обои с различными фактурами</h2>
             <p class="item-info-description">
-              Каталог можно считать идеальным решением для компаний, 
-              ассортимент товаров и услуг которых постоянно пополняется. 
+              Каталог можно считать идеальным решением для компаний,
+              ассортимент товаров и услуг которых постоянно пополняется.
             </p>
           </div>
         </div>
@@ -617,28 +756,40 @@
           <div>
             <h2 class="item-info-title">Стеклянный, акриловый фартук для кухни</h2>
             <p class="item-info-description">
-              Печать папок с корпоративной символикой, например, логотипом – 
+              Печать папок с корпоративной символикой, например, логотипом –
               это создание и постоянное поддерживание имиджа компании на рынке услуг.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 5 -->
     <article id="item35" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
             <h2 class="item-info-title">Светильники с led подсветкой</h2>
             <p class="item-info-description">
-              Каталог можно считать идеальным решением для компаний, 
-              ассортимент товаров и услуг которых постоянно пополняется. 
+              Каталог можно считать идеальным решением для компаний,
+              ассортимент товаров и услуг которых постоянно пополняется.
             </p>
           </div>
         </div>
@@ -651,21 +802,33 @@
           <div>
             <h2 class="item-info-title">Оформление стеклянных перегородок</h2>
             <p class="item-info-description">
-              Печать папок с корпоративной символикой, например, логотипом – 
+              Печать папок с корпоративной символикой, например, логотипом –
               это создание и постоянное поддерживание имиджа компании на рынке услуг.
             </p>
           </div>
         </div>
-        <div class="item-image" style="background-image: url({% static 'images/folder.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
       </div>
     </article>
     <!-- 7 -->
     <article id="item37" class="item">
       <div class="item-content">
-        <div class="item-image" style="background-image: url({% static 'images/catalogue.jpg' %});">
-          
+        <div class="item-image">
+          <div class="carousel">
+            <div class="slide active" style="background-image: url({% static 'images/brochure.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/catalogue.jpg' %});"></div>
+            <div class="slide" style="background-image: url({% static 'images/folder.jpg' %});"></div>
+            <div class="leftButton"></div>
+            <div class="rightButton"></div>
+          </div>
         </div>
         <div class="item-info mid">
           <div>
@@ -712,6 +875,7 @@
 
   <script src="{% static 'js/scrollToTop.js' %}"></script>
   <script src="{% static 'js/app.js' %}"></script>
+  <script src="{% static 'js/carousel.js' %}"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function(event) {
       if(localStorage.getItem('redirected')) {

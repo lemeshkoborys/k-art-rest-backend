@@ -1,0 +1,59 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.active {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.leftButton {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  box-shadow: inset 64px 0px 72px -30px rgba(0,0,0,0);
+  transition: box-shadow 0.4s ease-in-out;
+}
+.leftButton:hover {
+  box-shadow: inset 64px 0px 72px -30px rgba(0,0,0,0.3);
+  transition: box-shadow 0.4s ease-in-out;
+}
+.rightButton {
+  position: absolute;
+  margin-left: 25%;
+  width: 75%;
+  height: 100%;
+  box-shadow: inset -64px 0px 72px -30px rgba(0,0,0,0);
+  transition: box-shadow 0.4s ease-in-out;
+}
+.rightButton:hover {
+  box-shadow: inset -64px 0px 72px -30px rgba(0,0,0,0.3);
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+@media (max-width: 767px) {
+  .leftButton {
+    box-shadow: inset 32px 0px 36px -30px rgba(0,0,0,0);
+  }
+  .leftButton:hover {
+    box-shadow: inset 32px 0px 36px -30px rgba(0,0,0,0.3);
+  }
+  .rightButton {
+    box-shadow: inset -32px 0px 36px -30px rgba(0,0,0,0);
+  }
+  .rightButton:hover {
+    box-shadow: inset -32px 0px 36px -30px rgba(0,0,0,0.3);
+  }
+}
