@@ -184,6 +184,7 @@
   </div>
 
   <div class="pagination">
+  {% if nav_size > 1 %}
     {% if previous %}
         <a href="{{ previous }}">Previous</a>
     {% endif %}
@@ -203,6 +204,7 @@
     {% if next %}
       <a href="{{ next }}">Next</a>
     {% endif %}
+  {% endif %}
   </div>
 <!-- FOOTER WITH ADDRESS AND SOCIAL MEDIA LINKS -->
 <!-- ------------------------------------------ -->
