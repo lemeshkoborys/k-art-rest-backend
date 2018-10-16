@@ -29,7 +29,8 @@ class Post(models.Model):
     short_content = models.CharField(
         max_length=255,
         null=False,
-        blank=False
+        blank=False,
+        verbose_name='Краткое описание'
     )
 
     content = models.TextField(
