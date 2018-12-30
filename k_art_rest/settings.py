@@ -116,7 +116,7 @@ DATABASES = {
         'NAME': 'k_art_db',
         'USER': 'k_art_user',
         'PASSWORD': 'Qwe123qwe',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '',
     }
 }
