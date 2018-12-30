@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+
+  db:
+    image: postgres:10
+    environment:
+      - POSTGRES_USER=k_art_user
+      - POSTGRES_PASSWORD=Qwe123qwe
+      - POSTGRES_DB=k_art_db
+    networks:
+      - db_network
+    volumes:
+      - db_volume
+
+  k-art:
+    build: .
+    volumes:
+      - .:/k-art
+      - static_volume:/k-art/staticfiles
+    networks:  # <-- here
+      - nginx_network
+      - db_network
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:1.13
+    ports:
+      - 8001:81
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+      - static_volume:/k-art/staticfiles
+    depends_on:
+      - k-art
+    networks:  # <-- here
+      - nginx_network
+
+networks:  # <-- and here
+  nginx_network:
+    driver: bridge
+  db_network:
+    driver: bridge
+
+volumes:
+  db_volume:
+  static_volume:
