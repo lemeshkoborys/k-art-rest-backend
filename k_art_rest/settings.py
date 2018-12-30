@@ -27,7 +27,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'qnaxt7g=z-emp=2e+yd2+97!%&=f&_
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'radiant-ridge-32530.herokuapp.com', '176.36.243.30']
+ALLOWED_HOSTS = [
+    '127.0.0.1', 
+    'localhost',
+    '54.37.138.23'
+    'radiant-ridge-32530.herokuapp.com',
+    ]
 
 CLOUDINARY = {
     'max_length': 200,
