@@ -30,7 +30,7 @@ DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 ALLOWED_HOSTS = [
     '127.0.0.1', 
     'localhost',
-    '54.37.138.23'
+    '54.37.138.23',
     'radiant-ridge-32530.herokuapp.com',
     ]
 
