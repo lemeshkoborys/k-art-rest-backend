@@ -26,6 +26,10 @@ class SectionImageModelAdmin(admin.ModelAdmin):
         'image',
     )
 
+    list_filter = (
+        'section',
+    )
+
 
 @admin.register(Category)
 class CategoryModelAdmin(admin.ModelAdmin):
